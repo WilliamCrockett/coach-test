@@ -17,5 +17,6 @@ export default DS.Model.extend({
   objective_5: DS.attr(),
   session_report: DS.attr(),
   boat_maint: DS.attr(),
-  boat_maint_info: DS.attr()
+  boat_maint_info: DS.attr(),
+  editable: DS.attr()
 })

@@ -14,6 +14,9 @@ Router.map(function () {
   this.route('newSession')
   this.route('viewOldSessions')
   this.route('sessions')
+  this.route('session', { path: 'sessions/:id' }, function () {
+    this.route('edit-session')
+  })
 })
 
 export default Router

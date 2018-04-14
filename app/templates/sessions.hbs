@@ -1,6 +1,3 @@
-
-{{#link-to "newSession"}}New Session{{/link-to}}
-
 <div class="view-old-sessions">
   <table class="table table-striped table-hover table-bordered">
     <thead>
@@ -13,18 +10,16 @@
     </thead>
     <tbody>
 
-  {{!-- {{#link-to 'users'}} --}}
     {{#each model as |session|}}
 
       <tr>
-        <td>{{#link-to 'users'}}{{session.program}}{{/link-to}}</td>
+        <td>{{#link-to 'session' session}}{{session.program}}{{/link-to}}</td>
         <td>{{session.session_date}}</td>
         <td>{{session.session_rating}}</td>
         <td>{{session.helm}}</td>
       </tr>
 
     {{/each}}
-  {{!-- {{/link-to}} --}}
 
   </tbody>
   </table>

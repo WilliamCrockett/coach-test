@@ -1,0 +1,139 @@
+<div class="view-session border-show">
+  {{#if model.editable}}
+  <p>{{#link-to 'sessions:id.edit-session' session}}Edit this session{{/link-to}}</p>
+  {{/if}}
+
+  {{!-- <button {{action "createPDF"}} class="btn btin-primary pull-button-right">Download PDF</button> --}}
+  <form class="form-horizontal" id="singleSession">
+
+      <label class="col-sm-3 control-label">Session Date:</label>
+      <div class="col-sm-9 pad-5">
+        <p>{{model.session_date}}</p>
+      </div>
+
+      <label class="col-sm-3 control-label">Program:</label>
+      <div class="col-sm-9 pad-5">
+        <p>{{model.program}}</p>
+      </div>
+
+      <label class="col-sm-3 control-label">Session Rating:</label>
+      <div class="col-sm-9 pad-5">
+        <p>{{model.session_rating}}</p>
+      </div>
+
+      <label class="col-sm-3 control-label">Helm:</label>
+      <div class="col-sm-9 pad-5">
+        <p>{{model.helm}}</p>
+      </div>
+
+      <label class="col-sm-3 control-label">Crew:</label>
+      <div class="col-sm-9 pad-5">
+        {{#if model.crew}}
+        <p>{{model.crew}}</p>
+        {{else}}
+        <p>No Crew Member</p>
+        {{/if}}
+      </div>
+
+      <label class="col-sm-3 control-label">Wind Direction:</label>
+      <div class="col-sm-9 pad-5">
+        {{#if model.wind_dir}}
+        <p>{{model.wind_dir}}</p>
+        {{else}}
+        <p>No data</p>
+        {{/if}}
+      </div>
+
+      <label class="col-sm-3 control-label">Wind Strength:</label>
+      <div class="col-sm-9 pad-5">
+        {{#if model.wind_strength}}
+        <p>{{model.wind_strength}}</p>
+        {{else}}
+        <p>No data</p>
+        {{/if}}
+      </div>
+
+      <label class="col-sm-3 control-label">Chop:</label>
+      <div class="col-sm-9 pad-5">
+        {{#if model.chop}}
+        <p>{{model.chop}}</p>
+        {{else}}
+        <p>No data</p>
+        {{/if}}
+      </div>
+
+      <label class="col-sm-3 control-label">Objective 1:</label>
+      <div class="col-sm-9 pad-5">
+        {{#if model.objective_1}}
+        <p>{{model.objective_1}}</p>
+        {{else}}
+        <p>No data</p>
+        {{/if}}
+      </div>
+
+      <label class="col-sm-3 control-label">Objective 2:</label>
+      <div class="col-sm-9 pad-5">
+        {{#if model.objective_2}}
+        <p>{{model.objective_2}}</p>
+        {{else}}
+        <p>No data</p>
+        {{/if}}
+      </div>
+
+      <label class="col-sm-3 control-label">Objective 3:</label>
+      <div class="col-sm-9 pad-5">
+        {{#if model.objective_3}}
+        <p>{{model.objective_3}}</p>
+        {{else}}
+        <p>No data</p>
+        {{/if}}
+      </div>
+
+      <label class="col-sm-3 control-label">Objective 4:</label>
+      <div class="col-sm-9 pad-5">
+        {{#if model.objective_4}}
+        <p>{{model.objective_4}}</p>
+        {{else}}
+        <p>No data</p>
+        {{/if}}
+      </div>
+
+      <label class="col-sm-3 control-label">Objective 5:</label>
+      <div class="col-sm-9 pad-5">
+        {{#if model.objective_5}}
+        <p>{{model.objective_5}}</p>
+        {{else}}
+        <p>No data</p>
+        {{/if}}
+      </div>
+
+      <label class="col-sm-3 control-label">Sesion report:</label>
+      <div class="col-sm-9 pad-5">
+        {{#if model.session_report}}
+        <p>{{model.session_report}}</p>
+        {{else}}
+        <p>No data</p>
+        {{/if}}
+      </div>
+
+      <label class="col-sm-3 control-label">Boat Maintenance:</label>
+      <div class="col-sm-9 pad-5">
+        {{#if model.boat_maint}}
+        <p>{{model.boat_maint}}</p>
+        {{else}}
+        <p>No data</p>
+        {{/if}}
+      </div>
+
+      <label class="col-sm-3 control-label">Boat Maintenance Information:</label>
+      <div class="col-sm-9 pad-5">
+        {{#if model.boat_maint_info}}
+        <p>{{model.boat_maint_info}}</p>
+        {{else}}
+        <p>No data</p>
+        {{/if}}
+      </div>
+  </form>
+
+  {{#link-to 'sessions'}}Back to all sessions{{/link-to}}
+</div>
