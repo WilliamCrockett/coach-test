@@ -1,0 +1,10 @@
+{{#if hasItemToDelete}}
+    {{#modal-dialog close=(action 'closeConfirmationDialog') translucentOverlay=true}}
+        <h2 class="ui header">{{t "confirmation.are-you-sure-to-delete-name-placeholder" name=itemToDelete.name}}</h2>
+
+        <div class="ui divider"></div>
+        <button type="button" {{action "doRemoveItem"}} class="ui button primary">{{t "delete"}}</button>
+        <button type="button" {{action "closeConfirmationDialog"}} class="ui button right floated">{{t "cancel"}}</button>
+
+    {{/modal-dialog}}
+{{/if}}

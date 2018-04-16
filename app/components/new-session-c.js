@@ -23,6 +23,7 @@ export default Component.extend({
   actions: {
     addSession (newSession, e) {
       this.sendAction('addSession', this.get('newSession'))
+      // this.set('newSession', {})
     },
     setProgram (e) {
       this.set('newSession.program', e.target.value)

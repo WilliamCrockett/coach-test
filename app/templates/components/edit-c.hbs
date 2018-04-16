@@ -1,21 +1,17 @@
 <div class="view-session border-show">
-  {{#if model.editable}}
-  {{#link-to 'edit' model.id}}Edit this session{{/link-to}}
-  {{/if}}
 
-  {{!-- <button {{action "createPDF"}} class="btn btin-primary pull-button-right">Download PDF</button> --}}
   <form class="form-horizontal" id="singleSession">
 
       <label class="col-sm-3 control-label">Session Date:</label>
       <div class="col-sm-9 pad-5">
-        <p>{{model.session_date}}</p>
+        {{input placeholder='New session' value=model.session_date type="date"}}
       </div>
 
       <label class="col-sm-3 control-label">Program:</label>
       <div class="col-sm-9 pad-5">
-        <p>{{model.program}}</p>
+        {{input placeholder='New session' value=model.program type="text"}}
       </div>
-
+      {{!-- TODO --}}
       <label class="col-sm-3 control-label">Session Rating:</label>
       <div class="col-sm-9 pad-5">
         <p>{{model.session_rating}}</p>
@@ -23,115 +19,78 @@
 
       <label class="col-sm-3 control-label">Helm:</label>
       <div class="col-sm-9 pad-5">
-        <p>{{model.helm}}</p>
+        {{input placeholder='New session' value=model.helm type="text"}}
       </div>
 
       <label class="col-sm-3 control-label">Crew:</label>
       <div class="col-sm-9 pad-5">
-        {{#if model.crew}}
-        <p>{{model.crew}}</p>
-        {{else}}
-        <p>No Crew Member</p>
-        {{/if}}
+        {{input placeholder='Crew name' value=model.crew type="text"}}
       </div>
 
       <label class="col-sm-3 control-label">Wind Direction:</label>
       <div class="col-sm-9 pad-5">
-        {{#if model.wind_dir}}
-        <p>{{model.wind_dir}}</p>
-        {{else}}
-        <p>No data</p>
-        {{/if}}
+        {{input placeholder='Wind Direction' value=model.wind_dir type="text"}}
       </div>
 
       <label class="col-sm-3 control-label">Wind Strength:</label>
       <div class="col-sm-9 pad-5">
-        {{#if model.wind_strength}}
-        <p>{{model.wind_strength}}</p>
-        {{else}}
-        <p>No data</p>
-        {{/if}}
+        {{input placeholder='Wind Strength' value=model.wind_strength type="number"}}
       </div>
 
       <label class="col-sm-3 control-label">Chop:</label>
       <div class="col-sm-9 pad-5">
-        {{#if model.chop}}
-        <p>{{model.chop}}</p>
-        {{else}}
-        <p>No data</p>
-        {{/if}}
+        {{input placeholder='Chop' value=model.chop type="text"}}
       </div>
 
       <label class="col-sm-3 control-label">Objective 1:</label>
       <div class="col-sm-9 pad-5">
-        {{#if model.objective_1}}
-        <p>{{model.objective_1}}</p>
-        {{else}}
-        <p>No data</p>
-        {{/if}}
+        {{input placeholder='Objective 1' value=model.objective_1 type="text"}}
       </div>
 
       <label class="col-sm-3 control-label">Objective 2:</label>
       <div class="col-sm-9 pad-5">
-        {{#if model.objective_2}}
-        <p>{{model.objective_2}}</p>
-        {{else}}
-        <p>No data</p>
-        {{/if}}
+        {{input placeholder='Objective 2' value=model.objective_2 type="text"}}
       </div>
 
       <label class="col-sm-3 control-label">Objective 3:</label>
       <div class="col-sm-9 pad-5">
-        {{#if model.objective_3}}
-        <p>{{model.objective_3}}</p>
-        {{else}}
-        <p>No data</p>
-        {{/if}}
+        {{input placeholder='Objective 3' value=model.objective_3 type="text"}}
       </div>
 
       <label class="col-sm-3 control-label">Objective 4:</label>
       <div class="col-sm-9 pad-5">
-        {{#if model.objective_4}}
-        <p>{{model.objective_4}}</p>
-        {{else}}
-        <p>No data</p>
-        {{/if}}
+        {{input placeholder='Objective 4' value=model.objective_4 type="text"}}
       </div>
 
       <label class="col-sm-3 control-label">Objective 5:</label>
       <div class="col-sm-9 pad-5">
-        {{#if model.objective_5}}
-        <p>{{model.objective_5}}</p>
-        {{else}}
-        <p>No data</p>
-        {{/if}}
+        {{input placeholder='Objective 5' value=model.objective_5 type="text"}}
       </div>
 
+      {{!-- onchange={{ action 'setSessionReport' value=target.value }} ADD THIS BACK LATER --}}
       <label class="col-sm-3 control-label">Sesion report:</label>
       <div class="col-sm-9 pad-5">
-        {{#if model.session_report}}
-        <p>{{model.session_report}}</p>
-        {{else}}
-        <p>No data</p>
-        {{/if}}
+        <textarea class="col-sm-12 pad-5" value=model.session_report placeholder="Session Report">{{model.session_report}}</textarea>
       </div>
 
       <label class="col-sm-3 control-label">Boat Maintenance:</label>
       <div class="col-sm-9 pad-5">
         {{#if model.boat_maint}}
-        <p>{{model.boat_maint}}</p>
+        <input type="radio" id="radioButton1" name="boat_maint" value="true" checked>
+        <label for="radioButton1" class="pad-5">Yes</label>
+        <input type="radio" id="radioButton2" name="boat_maint" value="false">
+        <label for="radioButton2" class="pad-5">No</label>
         {{else}}
-        <p>No data</p>
+        <input type="radio" id="radioButton1" name="boat_maint" value="true">
+        <label for="radioButton1" class="pad-5">Yes</label>
+        <input type="radio" id="radioButton2" name="boat_maint" value="false" checked>
+        <label for="radioButton2" class="pad-5">No</label>
         {{/if}}
       </div>
 
       <label class="col-sm-3 control-label">Boat Maintenance Information:</label>
       <div class="col-sm-9 pad-5">
-        {{#if model.boat_maint_info}}
-        <p>{{model.boat_maint_info}}</p>
-        {{else}}
-        <p>No data</p>
-        {{/if}}
+        <textarea class="col-sm-12 pad-5" value=model.boat_maint_info placeholder="Boat Maintenance Info">{{model.boat_maint_info}}</textarea>
       </div>
   </form>
 

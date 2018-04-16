@@ -6,6 +6,7 @@
         <th>Date</th>
         <th>Rating</th>
         <th>Helm</th>
+        <th>Delete?</th>
       </tr>
     </thead>
     <tbody>
@@ -17,6 +18,11 @@
         <td>{{session.session_date}}</td>
         <td>{{session.session_rating}}</td>
         <td>{{session.helm}}</td>
+        {{#if session.editable}}
+        <td><button onclick{{action 'onDelete' session}}>Delete</button></td>
+        {{else}}
+        <td>No permission</td>
+        {{/if}}
       </tr>
 
     {{/each}}
