@@ -20,6 +20,12 @@ textarea {
   margin-left: 50%;
 }
 
+.white-background {
+  background-color: white;
+  margin: auto;
+  width: auto;
+}
+
 .new-session-div {
   // width: 75%;
   margin: auto;
@@ -36,4 +42,8 @@ body {
 
 .view-session {
   background-color: white;
+}
+
+.red-asteriks {
+  color: red;
 }

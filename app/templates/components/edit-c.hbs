@@ -1,81 +1,105 @@
 <div class="view-session border-show">
 
-  <form class="form-horizontal" id="singleSession">
+  <form {{action 'updateSession' on='submit'}} class="form-horizontal" id="singleSession">
 
-      <label class="col-sm-3 control-label">Session Date:</label>
+      <label class="col-sm-3 control-label">Session Date:<span class="red-asteriks">*</span></label>
       <div class="col-sm-9 pad-5">
-        {{input placeholder='New session' value=model.session_date type="date"}}
+        {{input required='required' placeholder='New session' value=session.session_date type="date"}}
       </div>
 
-      <label class="col-sm-3 control-label">Program:</label>
-      <div class="col-sm-9 pad-5">
-        {{input placeholder='New session' value=model.program type="text"}}
-      </div>
       {{!-- TODO --}}
-      <label class="col-sm-3 control-label">Session Rating:</label>
+      <label class="col-sm-3 control-label">Program<span class="red-asteriks">*</span></label>
       <div class="col-sm-9 pad-5">
-        <p>{{model.session_rating}}</p>
+        <select required='required' onchange={{ action 'setProgram' value=target.value }} class="form-control" value=session.program>
+          <option value="session.program">{{session.program}}</option>
+          <option value="470w">470w</option>
+          <option value="470m">470m</option>
+          <option value="49er">49er</option>
+          <option value="49erfx">49er FX</option>
+          <option value="laser">laser</option>
+          <option value="laserradial">Laser Radial</option>
+          <option value="finn">Finn</option>
+          <option value="nacr">Nacra</option>
+        </select>
       </div>
 
-      <label class="col-sm-3 control-label">Helm:</label>
+
+      {{!-- TODO --}}
+      <label class="col-sm-3 control-label">Session Rating:<span class="red-asteriks">*</span></label>
+      {{!-- <div class="col-sm-9 pad-5">
+        <p>{{session.session_rating}}</p>
+      </div> --}}
       <div class="col-sm-9 pad-5">
-        {{input placeholder='New session' value=model.helm type="text"}}
+        <select required='required' onchange={{ action 'setRating' value=target.value }} class="form-control" value=session.session_rating>
+          <option value="session.session_rating">{{session.session_rating}}</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+
+      <label class="col-sm-3 control-label">Helm:<span class="red-asteriks">*</span></label>
+      <div class="col-sm-9 pad-5">
+        {{input required='required' placeholder='New session' value=session.helm type="text"}}
       </div>
 
       <label class="col-sm-3 control-label">Crew:</label>
       <div class="col-sm-9 pad-5">
-        {{input placeholder='Crew name' value=model.crew type="text"}}
+        {{input placeholder='Crew name' value=session.crew type="text"}}
       </div>
 
       <label class="col-sm-3 control-label">Wind Direction:</label>
       <div class="col-sm-9 pad-5">
-        {{input placeholder='Wind Direction' value=model.wind_dir type="text"}}
+        {{input placeholder='Wind Direction' value=session.wind_dir type="text"}}
       </div>
 
       <label class="col-sm-3 control-label">Wind Strength:</label>
       <div class="col-sm-9 pad-5">
-        {{input placeholder='Wind Strength' value=model.wind_strength type="number"}}
+        {{input placeholder='Wind Strength' value=session.wind_strength type="number"}}
       </div>
 
       <label class="col-sm-3 control-label">Chop:</label>
       <div class="col-sm-9 pad-5">
-        {{input placeholder='Chop' value=model.chop type="text"}}
+        {{input placeholder='Chop' value=session.chop type="text"}}
       </div>
 
-      <label class="col-sm-3 control-label">Objective 1:</label>
+      <label class="col-sm-3 control-label">Objective 1:<span class="red-asteriks">*</span></label>
       <div class="col-sm-9 pad-5">
-        {{input placeholder='Objective 1' value=model.objective_1 type="text"}}
+        {{input required='required' placeholder='Objective 1' value=session.objective_1 type="text"}}
       </div>
 
       <label class="col-sm-3 control-label">Objective 2:</label>
       <div class="col-sm-9 pad-5">
-        {{input placeholder='Objective 2' value=model.objective_2 type="text"}}
+        {{input placeholder='Objective 2' value=session.objective_2 type="text"}}
       </div>
 
       <label class="col-sm-3 control-label">Objective 3:</label>
       <div class="col-sm-9 pad-5">
-        {{input placeholder='Objective 3' value=model.objective_3 type="text"}}
+        {{input placeholder='Objective 3' value=session.objective_3 type="text"}}
       </div>
 
       <label class="col-sm-3 control-label">Objective 4:</label>
       <div class="col-sm-9 pad-5">
-        {{input placeholder='Objective 4' value=model.objective_4 type="text"}}
+        {{input placeholder='Objective 4' value=session.objective_4 type="text"}}
       </div>
 
       <label class="col-sm-3 control-label">Objective 5:</label>
       <div class="col-sm-9 pad-5">
-        {{input placeholder='Objective 5' value=model.objective_5 type="text"}}
+        {{input placeholder='Objective 5' value=session.objective_5 type="text"}}
       </div>
 
       {{!-- onchange={{ action 'setSessionReport' value=target.value }} ADD THIS BACK LATER --}}
-      <label class="col-sm-3 control-label">Sesion report:</label>
+      <label class="col-sm-3 control-label">Sesion report:<span class="red-asteriks">*</span></label>
       <div class="col-sm-9 pad-5">
-        <textarea class="col-sm-12 pad-5" value=model.session_report placeholder="Session Report">{{model.session_report}}</textarea>
+        <textarea required='required' class="col-sm-12 pad-5" onchange={{ action 'setSessionReport' value=target.value }} value=session.session_report placeholder="Session Report">{{session.session_report}}</textarea>
       </div>
 
-      <label class="col-sm-3 control-label">Boat Maintenance:</label>
-      <div class="col-sm-9 pad-5">
-        {{#if model.boat_maint}}
+      <label class="col-sm-3 control-label">Boat Maintenance:<span class="red-asteriks">*</span></label>
+      <div class="col-sm-9 pad-5" onchange={{ action 'setBoatMaint' value=target.value}}>
+        {{#if session.boat_maint}}
         <input type="radio" id="radioButton1" name="boat_maint" value="true" checked>
         <label for="radioButton1" class="pad-5">Yes</label>
         <input type="radio" id="radioButton2" name="boat_maint" value="false">
@@ -90,9 +114,11 @@
 
       <label class="col-sm-3 control-label">Boat Maintenance Information:</label>
       <div class="col-sm-9 pad-5">
-        <textarea class="col-sm-12 pad-5" value=model.boat_maint_info placeholder="Boat Maintenance Info">{{model.boat_maint_info}}</textarea>
+        <textarea class="col-sm-12 pad-5" value=session.boat_maint_info placeholder="Boat Maintenance Info" onchange={{ action 'setBoatMaintReport' value=target.value }}>{{session.boat_maint_info}}</textarea>
       </div>
+
+      <button class="btn btn-primary submit-new-session pad-5" type="submit">Update session</button>
   </form>
 
-  {{#link-to 'sessions'}}Back to all sessions{{/link-to}}
+  {{#link-to 'sessions'}}Back to all sessions (without saving){{/link-to}}
 </div>

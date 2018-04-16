@@ -11,7 +11,7 @@ export default Route.extend({
         .then(() => this.get('store').unloadAll())
         .then(() => this.transitionTo('sign-in'))
         .then(() => {
-          this.get('flashMessages').warning('You have been signed out.')
+          this.toast.warning('You have been signed out.', 'Warning', {preventDuplicates: false})
         })
         .catch(() => {
           this.get('flashMessages')

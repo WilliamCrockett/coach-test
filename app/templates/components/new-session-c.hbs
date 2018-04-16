@@ -2,15 +2,15 @@
     <form {{action 'addSession' on='submit'}} class = "form-horizontal">
       <div class="border-show">
 
-        <label class="col-sm-3 control-label">Session Date</label>
+        <label class="col-sm-3 control-label">Session Date<span class="red-asteriks">*</span></label>
         <div class="col-sm-9 pad-5">
-          {{input placeholder='New session' value=newSession.session_date type="date"}}
+          {{input required='required' placeholder='New session' value=newSession.session_date type="date"}}
         </div>
 
-        <label class="col-sm-3 control-label">Select Program</label>
+        <label class="col-sm-3 control-label">Select Program<span class="red-asteriks">*</span></label>
         <div class="col-sm-9 pad-5">
-          <select onchange={{ action 'setProgram' value=target.value }} class="form-control" value=newSession.program>
-            <option value="select">Please select</option>
+          <select required='required' onchange={{ action 'setProgram' value=target.value }} class="form-control" value=newSession.program>
+            <option value="">Please select</option>
             <option value="470w">470w</option>
             <option value="470m">470m</option>
             <option value="49er">49er</option>
@@ -22,19 +22,29 @@
           </select>
         </div>
 
-        <label class="col-sm-3 control-label">Session Rating</label>
-        <div class="col-sm-9 pad-5" onchange={{ action 'setRating' value=target.value}} value=newSession.session_rating>
+        <label class="col-sm-3 control-label">Session Rating<span class="red-asteriks">*</span></label>
+        {{!-- <div class="col-sm-9 pad-5" onchange={{ action 'setRating' value=target.value}} value=newSession.session_rating>
           <input type="radio" id="radioButton1" name="session_rating" value="1"><label for="radioButton1" class="pad-5">1</label>
           <input type="radio" id="radioButton2" name="session_rating" value="2"><label for="radioButton2" class="pad-5">2</label>
           <input type="radio" id="radioButton3" name="session_rating" value="3"><label for="radioButton3" class="pad-5">3</label>
           <input type="radio" id="radioButton4" name="session_rating" value="4"><label for="radioButton4" class="pad-5">4</label>
           <input type="radio" id="radioButton5" name="session_rating" value="5"><label for="radioButton5" class="pad-5">5</label>
+        </div> --}}
+        <div class="col-sm-9 pad-5">
+          <select required='required' onchange={{ action 'setRating' value=target.value }} class="form-control" value=newSession.session_rating>
+            <option value="">Please select</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
         </div>
 
 
-        <label for="helm" class="col-sm-3 control-label">Helm</label>
+        <label for="helm" class="col-sm-3 control-label">Helm<span class="red-asteriks">*</span></label>
         <div class="col-sm-9 pad-5">
-          {{input placeholder='Helm' value=newSession.helm type="text"}}
+          {{input required='required' placeholder='Helm' value=newSession.helm type="text"}}
           {{!-- <input type="text" name="boat[name]" class="form-control" placeholder="Helm Name"> --}}
         </div>
 
@@ -62,9 +72,9 @@
           {{!-- <input type="text" name="boat[name]" class="form-control" placeholder="Chop"> --}}
         </div>
 
-        <label for="objective_1" class="col-sm-3 control-label">Objective 1</label>
+        <label for="objective_1" class="col-sm-3 control-label">Objective 1<span class="red-asteriks">*</span></label>
         <div class="col-sm-9 pad-5">
-          {{input placeholder='Objective 1' value=newSession.objective_1 type="text"}}
+          {{input required='required' placeholder='Objective 1' value=newSession.objective_1 type="text"}}
           {{!-- <input type="text" name="boat[name]" class="form-control" placeholder="Objective 1"> --}}
         </div>
 
@@ -92,12 +102,12 @@
           {{!-- <input type="text" name="boat[name]" class="form-control" placeholder="Objective 5"> --}}
         </div>
 
-        <label for="session report" class="col-sm-3 control-label">Session report</label>
+        <label for="session report" class="col-sm-3 control-label">Session report<span class="red-asteriks">*</span></label>
         <div class="col-sm-9 pad-5">
-          <textarea class="col-sm-12 pad-5" placeholder="Text here" onchange={{ action 'setSessionReport' value=target.value }} placeholder="Session Report"></textarea>
+          <textarea rows="6" required='required' class="col-sm-12 pad-5" placeholder="Text here" onchange={{ action 'setSessionReport' value=target.value }} placeholder="Session Report"></textarea>
         </div>
 
-        <label class="col-sm-3 control-label">Boat Maintenance</label>
+        <label class="col-sm-3 control-label">Boat Maintenance<span class="red-asteriks">*</span></label>
         <div class="col-sm-9 pad-5" onchange={{ action 'setBoatMaint' value=target.value}} value=newSession.session_rating>
           <input type="radio" id="radioButton1" name="boat_maint" value="true"><label for="radioButton1" class="pad-5">Yes</label>
           <input type="radio" id="radioButton2" name="boat_maint" value="false"><label for="radioButton2" class="pad-5">No</label>
@@ -105,7 +115,7 @@
 
         <label class="col-sm-3 control-label">Boat Maintenance report</label>
         <div class="col-sm-9 pad-5">
-          <textarea class="col-sm-12 pad-5" placeholder="Text here" onchange={{ action 'setBoatMaintReport' value=target.value }} placeholder="Boat Maintenance Report"></textarea>
+          <textarea rows="6" class="col-sm-12 pad-5" placeholder="Text here" onchange={{ action 'setBoatMaintReport' value=target.value }} placeholder="Boat Maintenance Report"></textarea>
         </div>
 
         <button class="btn btn-primary submit-new-session pad-5" type="submit">Create new session</button>

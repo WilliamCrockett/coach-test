@@ -17,15 +17,13 @@ export default Route.extend({
         .then(() => this.get('auth').signOut())
         .then(() => this.transitionTo('sign-in'))
         .then(() => {
-          this.get('flashMessages')
-          .success('Successfully changed your password!')
+          this.toast.success('Successfully changed your password!', 'Success!', {preventDuplicates: false})
         })
         .then(() => {
-          this.get('flashMessages').warning('You have been signed out.')
+          this.toast.warning('You have been signed out.')
         })
         .catch(() => {
-          this.get('flashMessages')
-          .danger('There was a problem. Please try again.')
+          this.toast.error('There was a problem. Please try again.', 'Error', {preventDuplicates: false})
         })
       } else {
         this.get('flashMessages')

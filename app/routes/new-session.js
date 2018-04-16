@@ -7,7 +7,7 @@ export default Route.extend({
       const session = this.get('store').createRecord('session', newSession).save()
         .then(() => {
           this.toast.success('This session was successfully added', 'Success!', {preventDuplicates: false})
-          // this.transitionTo('sessions')
+          this.transitionTo('sessions')
         })
         .catch(() => {
           this.toast.error('There was a problem adding this session', 'Error!', {preventDuplicates: false})

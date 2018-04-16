@@ -8,8 +8,12 @@ export default Route.extend({
     onDelete (session) {
       console.log('hi')
 
-      let confirmation = confirm("are you sure to delete") // I dont like this
-      // session.destroyRecord() // this works but I need to do a confirmation
+      if (confirm("are you sure to delete")) { // I dont like this
+        session.destroyRecord() // this works but I need to do a confirmation
+        this.toast.success('This session was successfully deleted', 'Success!', {preventDuplicates: false})
+      } else {
+        this.toast.info("We didn't delete this record", 'Note!', {preventDuplicates: false})
+      }
     }
   }
 })
