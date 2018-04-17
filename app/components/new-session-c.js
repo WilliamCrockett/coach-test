@@ -32,7 +32,9 @@ export default Component.extend({
       this.set('newSession.session_rating', e.target.value)
     },
     setSessionReport (e) {
-      this.set('newSession.session_report', e.target.value)
+      console.log(e)
+      // this.set('newSession.session_report', e.target.value)
+      this.set('newSession.session_report', e)
     },
     setBoatMaint (e) {
       this.set('newSession.boat_maint', e.target.value)

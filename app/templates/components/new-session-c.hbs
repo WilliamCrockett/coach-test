@@ -104,7 +104,8 @@
 
         <label for="session report" class="col-sm-3 control-label">Session report<span class="red-asteriks">*</span></label>
         <div class="col-sm-9 pad-5">
-          <textarea rows="6" required='required' class="col-sm-12 pad-5" placeholder="Text here" onchange={{ action 'setSessionReport' value=target.value }} placeholder="Session Report"></textarea>
+          {{tinymce-editor options=options value=text onValueChanged=(action "setSessionReport" value=target.value)}}
+          {{!-- <textarea rows="6" required='required' class="col-sm-12 pad-5" placeholder="Text here" onchange={{ action 'setSessionReport' value=target.value }} placeholder="Session Report"></textarea> --}}
         </div>
 
         <label class="col-sm-3 control-label">Boat Maintenance<span class="red-asteriks">*</span></label>
