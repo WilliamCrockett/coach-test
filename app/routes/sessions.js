@@ -5,9 +5,12 @@ export default Route.extend({
     return this.get('store').findAll('session')
   },
   actions: {
-    onDelete (session) {
+    // setSessionToDelete (session) {
+    //   console.log('in here')
+    //   $('#myModal').modal('show')
+    // },
+    confirmDelete (session) {
       console.log('hi')
-
       if (confirm("are you sure to delete")) { // I dont like this
         session.destroyRecord() // this works but I need to do a confirmation
         this.toast.success('This session was successfully deleted', 'Success!', {preventDuplicates: false})

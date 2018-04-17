@@ -19,14 +19,59 @@
         <td>{{session.session_rating}}</td>
         <td>{{session.helm}}</td>
         {{#if session.editable}}
-        <td><button onclick{{action 'onDelete' session}}>Delete</button></td>
+        {{!-- <td><button onclick{{action 'onDelete' session}}>Delete</button></td> --}}
+        <td><span onclick{{action 'confirmDelete' session}}>{{fa-icon "trash" size=2}}</span></td>
+        {{!-- <td>{{#bs-button onClick=(action (mut modal3) true)}}Open Modal{{/bs-button}}</td> --}}
+        {{!-- <td><span onclick{{action 'open'}}>{{fa-icon "trash" size=2}}</span></td> --}}
+        {{!-- <td><button onclick{{action 'setSessionToDelete' session}}>Delete</button></td> --}}
         {{else}}
         <td>No permission</td>
         {{/if}}
       </tr>
-
     {{/each}}
-
   </tbody>
   </table>
 </div>
+
+{{!-- {{#bs-modal open=modal3 onSubmit=(action "submit") onHidden=(action (mut modal3) false) as |modal|}}
+  {{#modal.header}}
+    <h4 class="modal-title">
+      Custom Dialog
+      <div class="badge">2</div>
+    </h4>
+  {{/modal.header}}
+  {{#modal.body}}
+    <input type="text" autofocus="autofocus">
+  {{/modal.body}}
+  {{#modal.footer}}
+    {{#bs-button onClick=(action modal.close)}}Cancel{{/bs-button}}
+    {{#bs-button type="danger"}}Delete{{/bs-button}}
+    {{#bs-button type="success" onClick=(action modal.submit)}}Save{{/bs-button}}
+  {{/modal.footer}}
+{{/bs-modal}} --}}
+
+{{!-- {{#bs-modal open=modal1  as |modal|}}
+  {{#modal.header}}
+    <h4 class="modal-title"><i class="glyphicon glyphicon-alert"></i> Alert</h4>
+  {{/modal.header}}
+  {{#modal.body}}Are you absolutely sure you want to do that???{{/modal.body}}
+  {{#modal.footer as |footer|}}
+    {{#bs-button onClick=(action modal.close) type="danger"}}Oh no, forget it!{{/bs-button}}
+    {{#bs-button onClick=(action modal.submit) type="success"}}Yeah!{{/bs-button}}
+  {{/modal.footer}}
+{{/bs-modal}} --}}
+{{!--
+{{#bs-modal open=modal3 onSubmit=(action "confirmDelete") onHidden=(action (mut modal3) false) as |modal|}}
+  {{#modal.header}}
+    <h4 class="modal-title">
+      Delete session
+    </h4>
+  {{/modal.header}}
+  {{#modal.body}}
+    Are you sure you want to delete this session?
+  {{/modal.body}}
+  {{#modal.footer}}
+    {{#bs-button onClick=(action modal.close)}}Cancel{{/bs-button}}
+    {{#bs-button class='btn btn-primary' type="submit"}}Delete{{/bs-button}}
+  {{/modal.footer}}
+{{/bs-modal}} --}}
