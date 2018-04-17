@@ -94,7 +94,8 @@
       {{!-- onchange={{ action 'setSessionReport' value=target.value }} ADD THIS BACK LATER --}}
       <label class="col-sm-3 control-label">Sesion report:<span class="red-asteriks">*</span></label>
       <div class="col-sm-9 pad-5">
-        <textarea required='required' class="col-sm-12 pad-5" onchange={{ action 'setSessionReport' value=target.value }} value=session.session_report placeholder="Session Report">{{session.session_report}}</textarea>
+        {{tinymce-editor options=options value=session.session_report onValueChanged=(action "setSessionReport" value=target.value)}}
+        {{!-- <textarea required='required' class="col-sm-12 pad-5" onchange={{ action 'setSessionReport' value=target.value }} value=session.session_report placeholder="Session Report">{{session.session_report}}</textarea> --}}
       </div>
 
       <label class="col-sm-3 control-label">Boat Maintenance:<span class="red-asteriks">*</span></label>
@@ -114,7 +115,8 @@
 
       <label class="col-sm-3 control-label">Boat Maintenance Information:</label>
       <div class="col-sm-9 pad-5">
-        <textarea class="col-sm-12 pad-5" value=session.boat_maint_info placeholder="Boat Maintenance Info" onchange={{ action 'setBoatMaintReport' value=target.value }}>{{session.boat_maint_info}}</textarea>
+        {{tinymce-editor options=options value=session.boat_maint_info onValueChanged=(action "setBoatMaintReport" value=target.value)}}
+        {{!-- <textarea class="col-sm-12 pad-5" value=session.boat_maint_info placeholder="Boat Maintenance Info" onchange={{ action 'setBoatMaintReport' value=target.value }}>{{session.boat_maint_info}}</textarea> --}}
       </div>
 
       <button class="btn btn-primary submit-new-session pad-5" type="submit">Update session</button>
