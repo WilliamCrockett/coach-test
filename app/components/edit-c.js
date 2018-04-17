@@ -15,15 +15,13 @@ export default Component.extend({
       console.log('still working')
     },
     setSessionReport (e) {
-      console.log(e)
       this.set('session.session_report', e)
     },
     setBoatMaint (e) {
       this.set('session.boat_maint', e.target.value)
     },
     setBoatMaintReport (e) {
-      console.log(e)
-      // this.set('session.boat_maint_info', e)
+      this.set('session.boat_maint_info', e)
     },
     setSessionOption (e) {
       console.log('in here')
