@@ -116,7 +116,8 @@
 
         <label class="col-sm-3 control-label">Boat Maintenance report</label>
         <div class="col-sm-9 pad-5">
-          <textarea rows="6" class="col-sm-12 pad-5" placeholder="Text here" onchange={{ action 'setBoatMaintReport' value=target.value }} placeholder="Boat Maintenance Report"></textarea>
+          {{tinymce-editor options=options value=text onValueChanged=(action "setBoatMaintReport" value=target.value)}}
+          {{!-- <textarea rows="6" class="col-sm-12 pad-5" placeholder="Text here" onchange={{ action 'setBoatMaintReport' value=target.value }} placeholder="Boat Maintenance Report"></textarea> --}}
         </div>
 
         <button class="btn btn-primary submit-new-session pad-5" type="submit">Create new session</button>

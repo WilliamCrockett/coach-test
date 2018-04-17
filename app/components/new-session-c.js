@@ -40,7 +40,7 @@ export default Component.extend({
       this.set('newSession.boat_maint', e.target.value)
     },
     setBoatMaintReport (e) {
-      this.set('newSession.boat_maint_info', e.target.value)
+      this.set('newSession.boat_maint_info', e)
     }
   }
 })

@@ -69,6 +69,7 @@
     "toastr": "^2.1.4"
   },
   "dependencies": {
-    "ember-qunit": "^3.3.0"
+    "ember-qunit": "^3.3.0",
+    "ember-sanitize": "^2.0.2"
   }
 }
