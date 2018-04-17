@@ -18,11 +18,15 @@ export default Component.extend({
       console.log(e)
       // this.set('session.session_report', e.target.value)
       this.set('session.session_report', e)
+      console.log(this.get('session.session_report'))
     },
     setBoatMaint (e) {
+      console.log(e)
       this.set('session.boat_maint', e.target.value)
+      console.log(this.get('session.boat_maint'))
     },
     setBoatMaintReport (e) {
+      console.log('in here')
       this.set('session.boat_maint_info', e)
     }
   }

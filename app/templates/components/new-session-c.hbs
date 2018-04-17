@@ -104,7 +104,8 @@
 
         <label for="session report" class="col-sm-3 control-label">Session report<span class="red-asteriks">*</span></label>
         <div class="col-sm-9 pad-5">
-          {{tinymce-editor options=options value=text onValueChanged=(action "setSessionReport" value=target.value)}}
+          {{!-- {{tinymce-editor options=option onValueChanged=(action "setSessionReport" value=target.value)}} --}}
+          {{tinymce-editor options=options value=session.session_report onValueChanged=(action "setSessionReport" value=target.value)}}
           {{!-- <textarea rows="6" required='required' class="col-sm-12 pad-5" placeholder="Text here" onchange={{ action 'setSessionReport' value=target.value }} placeholder="Session Report"></textarea> --}}
         </div>
 
@@ -116,7 +117,8 @@
 
         <label class="col-sm-3 control-label">Boat Maintenance report</label>
         <div class="col-sm-9 pad-5">
-          {{tinymce-editor options=options value=text onValueChanged=(action "setBoatMaintReport" value=target.value)}}
+          {{tinymce-editor options=options value=session.boat_maint_info onValueChanged=(action "setBoatMaintReport" value=target.value)}}
+          {{!-- {{tinymce-editor options=options onValueChanged=(action "setBoatMaintReport" value=target.value)}} --}}
           {{!-- <textarea rows="6" class="col-sm-12 pad-5" placeholder="Text here" onchange={{ action 'setBoatMaintReport' value=target.value }} placeholder="Boat Maintenance Report"></textarea> --}}
         </div>
 
