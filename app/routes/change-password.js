@@ -26,8 +26,10 @@ export default Route.extend({
           this.toast.error('There was a problem. Please try again.', 'Error', {preventDuplicates: false})
         })
       } else {
+        // I think flash messages work better here? It's more explicit
         this.get('flashMessages')
-        .danger('Your new passwords must match.')
+          .danger('Your new passwords must match.')
+        // this.toast.warning('Your new passwords must match.')
       }
     }
   }

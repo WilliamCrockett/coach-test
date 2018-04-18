@@ -1,9 +1,9 @@
 <div class="view-session border-show">
   {{#if model.editable}}
-  {{#link-to 'edit' model.id}}Edit this session{{/link-to}}
+  {{#link-to 'edit' model.id}}Edit this session &gt;&gt;&gt;&gt;{{/link-to}}
   {{/if}}
 
-  {{!-- <button {{action "createPDF"}} class="btn btin-primary pull-button-right">Download PDF</button> --}}
+  {{!-- <button {{action "createPDF"}} class="btn btn-primary pull-button-right">Download PDF</button> --}}
   <form class="form-horizontal" id="singleSession">
 
       <label class="col-sm-3 control-label">Session Date:</label>
@@ -133,5 +133,5 @@
       </div>
   </form>
 
-  {{#link-to 'sessions'}}Back to all sessions{{/link-to}}
+  {{#link-to 'sessions'}} &lt;&lt;&lt;&lt; Back to all sessions{{/link-to}}
 </div>
