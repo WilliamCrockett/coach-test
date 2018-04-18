@@ -1,6 +1,10 @@
 import Component from '@ember/component'
-const {computed} = Ember;
 
 export default Component.extend({
-  itemToDelete: null
+
+  actions: {
+    confirmDelete (session) {
+      this.sendAction('confirmDelete', session)
+    }
+  }
 })

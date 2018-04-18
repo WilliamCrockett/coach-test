@@ -1,10 +1,16 @@
-{{#if hasItemToDelete}}
-    {{#modal-dialog close=(action 'closeConfirmationDialog') translucentOverlay=true}}
-        <h2 class="ui header">{{t "confirmation.are-you-sure-to-delete-name-placeholder" name=itemToDelete.name}}</h2>
+{{#bs-button onClick=(action (mut modal3) true)}}Delete record{{/bs-button}}
 
-        <div class="ui divider"></div>
-        <button type="button" {{action "doRemoveItem"}} class="ui button primary">{{t "delete"}}</button>
-        <button type="button" {{action "closeConfirmationDialog"}} class="ui button right floated">{{t "cancel"}}</button>
-
-    {{/modal-dialog}}
-{{/if}}
+{{#bs-modal open=modal3 onSubmit=(action "confirmDelete" session) onHidden=(action (mut modal3) false) as |modal|}}
+  {{#modal.header}}
+    <h4 class="modal-title">
+      Delete this record?
+    </h4>
+  {{/modal.header}}
+  {{#modal.body}}
+    Are you sure? This action cannot be undone.
+  {{/modal.body}}
+  {{#modal.footer}}
+    {{#bs-button onClick=(action modal.close)}}Cancel{{/bs-button}}
+    {{#bs-button type="danger" onClick=(action modal.submit)}}Delete this record{{/bs-button}}
+  {{/modal.footer}}
+{{/bs-modal}}

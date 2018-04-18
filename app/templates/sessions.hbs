@@ -19,11 +19,8 @@
         <td>{{session.session_rating}}</td>
         <td>{{session.helm}}</td>
         {{#if session.editable}}
-        {{!-- <td><button onclick{{action 'onDelete' session}}>Delete</button></td> --}}
-        <td><span onclick{{action 'confirmDelete' session}}>{{fa-icon "trash" size=2}}</span></td>
-        {{!-- <td>{{#bs-button onClick=(action (mut modal3) true)}}Open Modal{{/bs-button}}</td> --}}
-        {{!-- <td><span onclick{{action 'open'}}>{{fa-icon "trash" size=2}}</span></td> --}}
-        {{!-- <td><button onclick{{action 'setSessionToDelete' session}}>Delete</button></td> --}}
+        {{delete-modal session=session
+                        confirmDelete='confirmDelete'}}
         {{else}}
         <td>No permission</td>
         {{/if}}
@@ -33,7 +30,7 @@
   </table>
 </div>
 
-{{!-- {{#bs-modal open=modal3 onSubmit=(action "submit") onHidden=(action (mut modal3) false) as |modal|}}
+{{!-- {{#bs-modal open=modal3 onSubmit=(action "confirmDelete" session) onHidden=(action (mut modal3) false) as |modal|}}
   {{#modal.header}}
     <h4 class="modal-title">
       Custom Dialog
