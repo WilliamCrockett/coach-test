@@ -19,8 +19,8 @@
         <td>{{session.session_rating}}</td>
         <td>{{session.helm}}</td>
         {{#if session.editable}}
-        {{delete-modal session=session
-                        confirmDelete='confirmDelete'}}
+        <td>{{delete-modal session=session
+                        confirmDelete='confirmDelete'}}</td>
         {{else}}
         <td>No permission</td>
         {{/if}}

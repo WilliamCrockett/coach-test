@@ -1,4 +1,5 @@
-{{#bs-button onClick=(action (mut modal3) true)}}Delete record{{/bs-button}}
+
+{{#bs-button class="btn btn-primary try-center" onClick=(action (mut modal3) true)}}Delete record{{/bs-button}}
 
 {{#bs-modal open=modal3 onSubmit=(action "confirmDelete" session) onHidden=(action (mut modal3) false) as |modal|}}
   {{#modal.header}}
