@@ -12,7 +12,6 @@ export default Component.extend({
     },
     setRating (e) {
       this.set('session.session_rating', e.target.value)
-      console.log('still working')
     },
     setSessionReport (e) {
       this.set('session.session_report', e)
@@ -24,8 +23,7 @@ export default Component.extend({
       this.set('session.boat_maint_info', e)
     },
     setSessionOption (e) {
-      console.log('in here')
-      console.log(e)
+      // might not need this?
     }
   }
 })

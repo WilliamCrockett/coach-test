@@ -6,7 +6,6 @@ export default Route.extend({
   },
   actions: {
     addSession (newSession) {
-      console.log(newSession)
       newSession.save()
       // const session = this.get('store').createRecord('session', newSession).save()
         .then(() => {

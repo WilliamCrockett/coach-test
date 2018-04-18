@@ -6,8 +6,6 @@ export default Route.extend({
   },
   actions: {
     editSession (session) {
-      console.log(session)
-
       session.save()
         .then(() => {
           this.toast.success('This session was successfully updated', 'Success!', {preventDuplicates: false})
