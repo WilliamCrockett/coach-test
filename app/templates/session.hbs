@@ -110,7 +110,7 @@
       <label class="col-sm-3 control-label">Sesion report:</label>
       <div class="col-sm-9 pad-5">
         {{#if model.session_report}}
-        <p class="top-pad-5">{{sanitize-html model.session_report}}</p>
+        <p class="top-pad-5">{{sanitize-html model.session_report "strict"}}</p>
         {{!-- <p class="pad-5">{{{model.session_report}}}</p> --}}
         {{else}}
         <p>No data</p>
@@ -125,7 +125,7 @@
       <label class="col-sm-3 control-label">Boat Maintenance Information:</label>
       <div class="col-sm-9 pad-5">
         {{#if model.boat_maint_info}}
-        <p class="top-pad-5">{{sanitize-html model.boat_maint_info}}</p>
+        <p class="top-pad-5">{{sanitize-html model.boat_maint_info "strict"}}</p>
         {{!-- <p class="pad-5">{{{model.boat_maint_info}}}</p> --}}
         {{else}}
         <p>No data</p>

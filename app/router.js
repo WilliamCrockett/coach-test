@@ -16,10 +16,10 @@ Router.map(function () {
   this.route('sessions')
   this.route('session', { path: 'sessions/:id' })
   this.route('edit', { path: 'sessions/:id/edit' })
-  // this.route('session', { path: 'sessions/:id' }, function () {
-  //   this.route('edit')
+  // this.route('not-found', { path: 'sessions/:id' }, function () {
+  //   this.route('session', { path: '/*path' })
   // })
-  this.route('not-found', { path: '*path' })
+  this.route('not-found', { path: '/*path' })
 })
 
 export default Router
