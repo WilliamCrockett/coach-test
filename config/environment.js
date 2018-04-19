@@ -50,7 +50,7 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    ENV.rootURL = '/coach'
+    ENV.rootURL = '/'
     ENV.locationType = 'hash'
     ENV.apiHost = 'https://coach-api.herokuapp.com/'
   }
