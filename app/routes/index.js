@@ -2,10 +2,7 @@ import Route from '@ember/routing/route'
 import { inject as service } from '@ember/service'
 
 export default Route.extend({
-  queries: service(),
-  foo: {
-    some_key: 'Boogity'
-  },
+  queries: service()
 
   // model () {
   //   return this.get('queries').byProgram('470m')
